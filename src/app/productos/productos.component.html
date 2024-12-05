@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorateur, donde puedes realizar tus compras con seguridad</title>
+</head>
+<body>
+    <header>
+        <h1>Donde puedes encontrar la seguridad de comprar en linea</h1>
+    </header>
+    
+    <nav>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#acerca">Acerca de Nosotros</a>
+        <nav>
+          <span id="indicador">Carrito: <span>{{ contadorCarrito }}</span></span>
+        </nav>
+    </nav>
+    
+    <div class="contenedor" id="productos">
+        <h1>Productos mas vendidos</h1>
+        <div class="product">
+          <img src="images/audifonos.webp" alt="Producto 1">
+          <h3>Audifonos Bluetooth</h3>
+            <p>$10.00</p>
+            <div>
+              <button (click)="notificar()">Agregar al Carrito</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/teclado.webp" alt="Producto 2">
+            <h3>Teclado de oficina</h3>
+            <p>$15.00</p>
+            <div>
+              <button (click)="notificar()">Agregar al Carrito</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/mouse.webp" alt="Producto 3">
+            <h3>Mouse de oficina</h3>
+            <p>$15.00</p>
+            <div>
+              <button (click)="notificar()">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script>//JavaScript
+        let contadorcarrito = 0;
+
+        function notificar(){
+        const preguntar = confirm("¿Desea agregar este producto?");//Saldrá una notificación para agregar el producto
+        if(preguntar){
+            contadorcarrito++;//Sirve para incrementar el contador del carrito
+            document.getElementById("contador").textContent = contadorcarrito;
+
+            alert("Se ha agregado el producto al carrito");//Sale una notificación confirmando que se ha agregado el producto
+        }else{
+            alert("El producto no se ha agregado");//Una notificación para indicar que se ha cancelado la petición
+        }
+    }
+
+        
+    </script>
+</body>
+</html> 
